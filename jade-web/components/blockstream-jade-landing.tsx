@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { ArrowRight, Shield, Zap, Lock, Cpu, Bluetooth, Battery, ChevronDown, TvMinimal } from "lucide-react"
 import Link from 'next/link'
+import Image from 'next/image'
 
 const content = {
   en: {
@@ -109,16 +110,17 @@ const content = {
 
 export function BlockstreamJadeLanding() {
   const [lang, setLang] = useState('en')
-  const t = content[lang]
+  const t = content[lang as keyof typeof content]
 
   return (
     <div className="bg-gray-900 min-h-screen text-gray-100">
       <header className="container mx-auto px-4 py-8">
         <nav className="flex justify-between items-center">
-          <img
-            src="logo.png"
+          <Image
+            src="/logo.png"
             alt="Blockstream JADE"
-            width={200}  
+            width={200}
+            height={50}  
             className="cursor-pointer"
             />
           <div className="flex items-center space-x-4">
@@ -154,8 +156,8 @@ export function BlockstreamJadeLanding() {
           <div className="md:w-1/2">
             <div className="relative">
               <div className="absolute inset-0 bg-green-500 blur-3xl opacity-30"></div>
-              <img
-                src="../jade.png"
+              <Image
+                src="/jade.png"
                 alt="Blockstream JADE Wallet"
                 className="relative z-10 mx-auto"
                 width={300}
@@ -253,7 +255,7 @@ export function BlockstreamJadeLanding() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: { icon: ReactNode, title: string, description: string }) {
   return (
     <div className="bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center">
       <div className="mb-4">{icon}</div>
@@ -263,7 +265,7 @@ function FeatureCard({ icon, title, description }) {
   )
 }
 
-function SpecCard({ icon, title, description }) {
+function SpecCard({ icon, title, description }: { icon: ReactNode, title: string, description: string }) {
   return (
     <div className="bg-gray-800 p-6 rounded-lg flex items-center">
       <div className="mr-4">{icon}</div>
@@ -275,7 +277,7 @@ function SpecCard({ icon, title, description }) {
   )
 }
 
-function FAQItem({ question, answer }) {
+function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
