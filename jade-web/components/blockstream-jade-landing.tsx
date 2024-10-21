@@ -231,7 +231,7 @@ export function BlockstreamJadeLanding() {
             <h2 className="text-4xl font-bold mb-6">{t.cta.title}</h2>
             <p className="text-xl mb-8">{t.cta.subtitle}</p>
             <Link href='https://smartstore.naver.com/bitkit'>
-            <Button className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors">
+            <Button className="bg-white text-green-800 hover:bg-gray-100 px-5 py-3 rounded-full text-lg font-semibold transition-colors">
               {t.cta.button}
             </Button>
             </Link>
