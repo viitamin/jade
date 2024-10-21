@@ -3,7 +3,7 @@
 import { useState, ReactNode } from 'react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { ArrowRight, Shield, Zap, Lock, Cpu, Bluetooth, Battery, ChevronDown, TvMinimal, GlobeLock, Box } from "lucide-react"
+import { ArrowRight, Shield, Lock, Cpu, Bluetooth, Battery, ChevronDown, TvMinimal, Box } from "lucide-react"
 import Link from 'next/link'
 import Image from 'next/image'
 
