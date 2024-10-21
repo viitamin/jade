@@ -3,7 +3,7 @@
 import { useState, ReactNode } from 'react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { ArrowRight, Shield, Zap, Lock, Cpu, Bluetooth, Battery, ChevronDown, TvMinimal } from "lucide-react"
+import { ArrowRight, Shield, Zap, Lock, Cpu, Bluetooth, Battery, ChevronDown, TvMinimal, GlobeLock, Box } from "lucide-react"
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -19,34 +19,34 @@ const content = {
       title: "Key Features",
       security: {
         title: "Unbreakable Security",
-        description: "Military-grade encryption to keep your assets safe from any threat."
+        description: "State-of-the-art encryption to protect your assets from any threat."
       },
       speed: {
-        title: "Lightning Fast",
-        description: "Instant transactions with minimal fees, powered by cutting-edge technology."
+        title: "Compatibility",
+        description: "Universal compatibility that works with any wallet."
       },
       control: {
-        title: "Full Control",
-        description: "You hold the keys. No third-party can access your funds without your permission."
+        title: "Air-gapped transaction",
+        description: "Securely, with complete offline transactions, without any internet connection."
       }
     },
     specs: {
       title: "Technical Specifications",
-      processor: "Processor",
-      processorDesc: "Dual-core ARM Cortex-M4 CPU",
+      processor: "Dimensions",
+      processorDesc: "60mm x 24mm x 17mm",
       display: "Display",
-      displayDesc: "1.3-inch IPS color LCD",
+      displayDesc: "1.14-inch IPS color LCD",
       connectivity: "Connectivity",
       connectivityDesc: "USB-C, Bluetooth Low Energy",
       battery: "Battery",
-      batteryDesc: "250mAh LiPo rechargeable battery"
+      batteryDesc: "240mAh LiPo rechargeable battery"
     },
     faq: {
       title: "Frequently Asked Questions",
       q1: "How secure is Blockstream JADE?",
       a1: "Blockstream JADE uses state-of-the-art security measures, including a secure element and open-source firmware, to ensure the highest level of protection for your digital assets.",
-      q2: "Can I use Blockstream JADE with multiple cryptocurrencies?",
-      a2: "Yes, Blockstream JADE supports Bitcoin and various other cryptocurrencies, allowing you to manage multiple assets securely in one device.",
+      q2: "Does Jade send wallet information to a server?",
+      a2: "No, Blockstream Jade does not send wallet information to a server. Your seed phrase never leaves Jade and remains highly encrypted on your device.",
       q3: "How long does the battery last?",
       a3: "The 250mAh battery can last for several hours of active use and maintains a charge for weeks when idle."
     },
@@ -68,34 +68,34 @@ const content = {
       title: "주요 특징",
       security: {
         title: "뛰어난 보안성",
-        description: "군사 등급의 암호화로 모든 위협으로부터 자산을 안전하게 보호합니다."
+        description: "완벽한 암호화 기술로 안전하게, 완전한 오픈소스로 투명하게."
       },
       speed: {
-        title: "빠른 속도",
-        description: "최첨단 기술을 통해 최소한의 수수료로 즉각적인 거래가 가능합니다."
+        title: "호환성",
+        description: "어떤 지갑과도 호환 가능한 범용성."
       },
       control: {
-        title: "완전한 제어",
-        description: "키는 사용자가 보유합니다. 사용자의 허가 없이는 어떤 제3자도 자금에 접근할 수 없습니다."
-      }
+        title: "에어갭 트랜젝션",
+        description: "인터넷 연결 없이, 완전한 오프라인 거래로 안전하게."
+      },
     },
     specs: {
       title: "기술 사양",
-      processor: "프로세서",
-      processorDesc: "듀얼 코어 ARM Cortex-M4 CPU",
+      processor: "제원",
+      processorDesc: "60mm x 24mm x 17mm",
       display: "디스플레이",
-      displayDesc: "1.3인치 IPS 컬러 LCD",
+      displayDesc: "1.14인치 IPS 컬러 LCD",
       connectivity: "연결성",
-      connectivityDesc: "USB-C, 블루투스 저에너지",
+      connectivityDesc: "USB-C, 블루투스",
       battery: "배터리",
-      batteryDesc: "250mAh LiPo 충전식 배터리"
+      batteryDesc: "240mAh LiPo 충전식 배터리"
     },
     faq: {
       title: "자주 묻는 질문",
       q1: "Blockstream JADE는 얼마나 안전한가요?",
       a1: "Blockstream JADE는 보안 요소와 오픈소스 펌웨어를 포함한 최첨단 보안 조치를 사용하여 디지털 자산에 대한 최고 수준의 보호를 보장합니다.",
-      q2: "Blockstream JADE를 여러 암호화폐와 함께 사용할 수 있나요?",
-      a2: "네, Blockstream JADE는 비트코인 및 다양한 다른 암호화폐를 지원하여 하나의 기기에서 여러 자산을 안전하게 관리할 수 있습니다.",
+      q2: "Blockstream JADE는 서버에 지갑 정보를 전송하나요?",
+      a2: "아니오. 서버에 보내지 않습니다. 지갑 정보는 절대 제이드 외부로 나가지 않으며 암호화 단계를 거쳐 오직 지갑 내부에만 보관됩니다.",
       q3: "배터리는 얼마나 오래 지속되나요?",
       a3: "250mAh 배터리는 활발한 사용 시 몇 시간 동안 지속되며, 유휴 상태에서는 몇 주 동안 충전을 유지합니다."
     },
@@ -124,10 +124,12 @@ export function BlockstreamJadeLanding() {
             className="cursor-pointer"
             />
           <div className="flex items-center space-x-4">
+            {/*
             <Button variant="ghost">{t.nav.home}</Button>
             <Button variant="ghost">{t.nav.features}</Button>
             <Button variant="ghost">{t.nav.specs}</Button>
             <Button variant="ghost">{t.nav.faq}</Button>
+            */}
             <div className="flex items-center space-x-2">
               <span className="text-sm">EN</span>
               <Switch
@@ -146,7 +148,7 @@ export function BlockstreamJadeLanding() {
           <div className="md:w-1/2">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">{t.hero.title}</h2>
             <p className="text-xl mb-8">{t.hero.subtitle}</p>
-            <Link href='https://smartstore.naver.com/bitkit'>
+            <Link href='https://bitkit.co.kr'>
             <Button className="bg-green-500 hover:bg-green-600 text-white">
               {t.hero.cta} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -176,15 +178,16 @@ export function BlockstreamJadeLanding() {
               description={t.features.security.description}
             />
             <FeatureCard
-              icon={<Zap className="h-8 w-8 text-green-500" />}
-              title={t.features.speed.title}
-              description={t.features.speed.description}
-            />
-            <FeatureCard
               icon={<Lock className="h-8 w-8 text-green-500" />}
               title={t.features.control.title}
               description={t.features.control.description}
             />
+            <FeatureCard
+              icon={<Cpu className="h-8 w-8 text-green-500" />}
+              title={t.features.speed.title}
+              description={t.features.speed.description}
+            />
+            
           </div>
         </section>
         
@@ -192,7 +195,7 @@ export function BlockstreamJadeLanding() {
           <h3 className="text-3xl font-bold mb-12 text-center">{t.specs.title}</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <SpecCard
-              icon={<Cpu className="h-8 w-8 text-green-500" />}
+              icon={<Box className="h-8 w-8 text-green-500" />}
               title={t.specs.processor}
               description={t.specs.processorDesc}
             />
@@ -222,18 +225,8 @@ export function BlockstreamJadeLanding() {
             <FAQItem question={t.faq.q3} answer={t.faq.a3} />
           </div>
         </section>
-        
-        <section className="mt-24 text-center">
-          <h3 className="text-3xl font-bold mb-6">{t.cta.title}</h3>
-          <p className="text-xl mb-8">{t.cta.subtitle}</p>
-          <Link href='https://smartstore.naver.com/bitkit'>
-          <Button className="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-4">
-            {t.cta.button}
-          </Button>
-          </Link>
-        </section>
 
-        <section id="buy" className="bg-gradient-to-r from-green-500 to-green-800 py-20">
+        <section id="buy" className="bg-gradient-to-r from-green-500 to-green-800 py-20 mt-24">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-6">{t.cta.title}</h2>
             <p className="text-xl mb-8">{t.cta.subtitle}</p>
